@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="description" content="Аренда бетононасосов в Москве и области. Каталог техники и предварительный расчёт смены.">
+<title>PROБетононасос — аренда и расчёт подачи бетона</title>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<header class="top"><div class="wrap bar">
+<a class="brand" href="#"><b>PRO</b>БЕТОНОНАСОС</a>
+<nav aria-label="Разделы"><a href="#fleet">Техника</a><a href="#calc">Расчёт</a><a href="#contact">Контакты</a></nav>
+<a class="phone" href="tel:+74951814195">+7 495 181-41-95</a>
+</div></header>
+<main>
+<section class="hero">
+<div class="wrap hero-inner">
+<p class="eyebrow"><span></span> Москва и Московская область</p>
+<h1>Бетононасос<br>на вашу заливку</h1>
+<p>Подберём технику под объём бетона, расстояние до опалубки и условия подъезда.</p>
+<a class="button" href="#calc">Рассчитать аренду <span>↗</span></a>
+<a class="hero-link" href="#fleet">Смотреть технику ↓</a>
+</div>
+</section>
+<div class="metrics"><div class="wrap stats">
+<div><strong>16–68 м</strong><span>стрела автобетононасоса</span></div>
+<div><strong>7 + 1 ч</strong><span>работа и промывка за смену</span></div>
+<div><strong>24/7</strong><span>принимаем заявки</span></div>
+<div><strong>4,9 / 5</strong><a href="https://2gis.ru/lyubertsy/firm/70000001074433152/tab/reviews">Рейтинг в 2ГИС ↗</a></div>
+</div></div>
+<section class="wrap section" id="fleet">
+<p class="eyebrow"><span></span> Каталог техники</p>
+<h2>Выберите насос под объект</h2>
+<div id="cards" class="cards"></div>
+<details class="price"><summary>Прайс по всем 20 позициям</summary>
+<table><caption>Цены за смену по карточке <a href="https://2gis.ru/lyubertsy/firm/70000001074433152/tab/prices">2ГИС ↗</a> (прайс от 24 сентября 2025 года). Подача и оснащение уточняются отдельно.</caption><thead><tr><th scope="col">Техника</th><th scope="col">₽ / смена</th></tr></thead><tbody id="price-rows"></tbody></table>
+</details>
+</section>
+<section class="calc-section" id="calc"><div class="wrap section">
+<p class="eyebrow"><span></span> Калькулятор аренды</p>
+<h2>Рассчитайте стоимость аренды</h2>
+<p class="intro">Укажите, сколько бетона нужно подать и где стоит объект. Для первичного подбора можно начать с задачи.</p>
+<form id="estimate" class="calculator">
+<div class="fields">
+<label class="wide">Что заливаете<select name="job"><option>Фундамент</option><option>Пол внутри здания</option><option>Перекрытие</option><option>Монолитные конструкции</option><option>Другое</option></select></label>
+<label>Объём бетона, м³<input name="volume" type="number" min="0.1" max="100000" step="0.1" value="40" required></label>
+<label>Темп приёмки, м³/ч<input name="pace" type="number" min="1" max="200" value="15" required><small>15 м³/ч для примера. Укажите темп вашей бригады.</small></label>
+<label>Расстояние до точки, м<input name="distance" type="number" min="0" max="2000" value="15" required></label>
+<label>Высота подачи, м<input name="height" type="number" min="0" max="500" value="0" required></label>
+<label class="wide">Техника<select name="pump" id="pump"><option value="">Предложить по параметрам</option></select></label>
+<label class="wide">Адрес объекта<input name="address" placeholder="Город, улица, дом или ориентир" maxlength="200" required></label>
+<label>Дата подачи<input name="date" type="date"></label>
+<label>Время по Москве<input name="time" type="time" value="09:00"></label>
+<label class="wide">Стоимость подачи по адресу, ₽ <small>Если менеджер уже назвал сумму</small><input name="delivery" type="number" min="0" max="10000000" placeholder="Уточнить у менеджера"></label>
+<label class="wide">Условия подъезда <small>Необязательно</small><textarea name="notes" rows="2" maxlength="400" placeholder="Узкие ворота, провода, место для установки…"></textarea></label>
+<button class="button wide" type="submit">Рассчитать стоимость <span>↗</span></button>
+</div>
+<aside class="estimate" aria-label="Предварительный расчёт">
+<p class="eyebrow"><span></span> Предварительная смета</p>
+<div id="result" aria-live="polite"><p>Заполните адрес и нажмите «Рассчитать стоимость».</p></div>
+<div id="actions" hidden><button type="button" class="outline" id="copy">Скопировать заявку</button> <a id="email" class="email">Открыть письмо ↗</a><p id="copy-status" role="status"></p></div>
+</aside>
+</form>
+</div></section>
+<section class="wrap section conditions">
+<div><p class="eyebrow"><span></span> Условия аренды</p><h2>Перед подачей техники</h2></div>
+<div><details open><summary>Что входит в смену?</summary><p>Ориентир — 7 часов работы и 1 час на промывку. Услуги оператора входят в аренду. Подачу техники, трубы, шланги и расходные материалы менеджер рассчитывает по объекту.</p></details>
+<details><summary>Что подготовить на площадке?</summary><p>Согласуйте место установки, подъезд миксеров, доступ к воде и место для промывки. Сообщите менеджеру о проводах, уклоне, котлованах и ограничениях по габаритам.</p></details>
+<details><summary>Как подтвердить дату и цену?</summary><p>Передайте параметры расчёта менеджеру. Он проверит наличие техники, схему установки, логистику и итоговую цену.</p></details></div>
+</section>
+<section class="demo"><div class="wrap"><h2>Демо-версия</h2><p>Это не полная весрия сайта. Удалю этот текст по первой просьбе.</p></div></section>
+<section class="wrap section" id="contact">
+<p class="eyebrow"><span></span> Контакты</p><h2>Обсудим вашу заливку</h2>
+<div class="contact"><div><a class="contact-phone" href="tel:+74951814195">+7 495 181-41-95</a><p>Круглосуточно</p><a href="mailto:probetononasos@yandex.ru">probetononasos@yandex.ru</a></div>
+<div><strong>Офис в Люберцах</strong><p>Октябрьский проспект, 112А<br>2 этаж, офис 123</p><a href="https://2gis.ru/lyubertsy/firm/70000001074433152">Открыть точку в 2ГИС ↗</a></div></div>
+<iframe class="map" loading="lazy" title="Офис PROБетононасос на карте 2ГИС" src="https://widgets.2gis.com/widget?type=firmsonmap&amp;options=%7B%22width%22%3A720%2C%22height%22%3A285%2C%22borderColor%22%3A%22%23deded5%22%2C%22pos%22%3A%7B%22lat%22%3A55.683622%2C%22lon%22%3A37.877036%2C%22zoom%22%3A16%7D%2C%22opt%22%3A%7B%22city%22%3A%22moscow%22%7D%2C%22org%22%3A%5B%7B%22id%22%3A%2270000001074433152%22%7D%5D%7D"></iframe>
+</section>
+</main>
+<footer><div class="wrap bar"><a class="brand" href="#"><b>PRO</b>БЕТОНОНАСОС</a><a href="https://probetononasos.ru/">Действующий сайт компании ↗</a></div></footer>
+<div class="mobile"><a href="tel:+74951814195">Позвонить</a><a href="#calc">Рассчитать аренду ↗</a></div>
+</body>
+</html>
